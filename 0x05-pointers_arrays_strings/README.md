@@ -1,0 +1,1 @@
+This is about pointers in C language

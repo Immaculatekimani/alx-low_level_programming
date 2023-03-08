@@ -1,0 +1,1 @@
+Strings are considered arrays in C

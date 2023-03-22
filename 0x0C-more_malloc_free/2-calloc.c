@@ -1,67 +1,44 @@
 #include "main.h"
-#include <stdlib.h>
-
 /**
- * _strlen - gets string length
- * @string: string
- * Return: length (int)
- */
-
-int _strlen(char *string)
+ * _memset - this function set memory
+ * @s: s is a buffer that it contains in array
+ * @b: the new value to set in the buffer
+ * @n: the number of bytes to be altered.
+(* a blank line
+* Description: this function set memory)?
+(* section header: the header of this function is holberton.h)*
+* Return: return char
+*/
+char *_memset(char *s, char b, unsigned int n)
 {
-	int length;
+	int i;
 
-	length = 0;
-	while (string[length] != '\0')
+	for (i = 0; n > 0; i++, n--)
 	{
-		length++;
+		s[i] = b;
 	}
-	return (length);
+
+	return (s);
 }
-
 /**
- * string_nconcat - concatenates two strings
- * @s1: string 1
- * @s2: string 2
- * @n: integer that determines whether entire s2 string will be used
- * Return: pointer to allocated memory corresponding with the string
- */
-
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+ * _calloc - allocate memory and set in 0.
+(* a blank line
+ *@nmemb:the size of the data type
+ *@size: number of btyes to be alocated
+* Description: copy a string)?
+(* section header: the header of this function is holberton.h)*
+* Return: no return only allocate memory.
+*/
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int length1, length2, lengthc, i, j;
-	char *str;
+	void *p;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	length1 = _strlen(s1);
-	length2 = _strlen(s2);
-
-	if (n >= length2)
-		lengthc = length1 + length2 + 1;
-	else
-	{
-		lengthc = length1 + n + 1;
-		length2 = n;
-	}
-	str = malloc(lengthc);
-	if (str == NULL)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (NULL);
+	_memset(p, 0, (nmemb * size));
 
-	i = 0;
-	while (i < length1)
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (j < length2)
-	{
-		str[i + j] = s2[j];
-		j++;
-	}
-	str[i + j] = '\0';
-	return (str);
+	return (p);
 }

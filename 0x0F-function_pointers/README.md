@@ -9,4 +9,5 @@
 3 main.c, op_functions.c, get_op_func.c, calc.h -A program that performs simple operations.  
   
             ADVANCED PROJECTS
-4 
+
+100 main_opcodes - A program that prints the opcodes of its own main function.

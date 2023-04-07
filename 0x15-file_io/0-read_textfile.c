@@ -2,8 +2,8 @@
 
 /**
  * read_textfile - reads a text file and prints it to standard output
- * filename:the name of the file
- * letters:the number of letters
+ * @filename:the name of the file
+ * @letters:the number of letters
  * Return: if success return number of letter, else return 0
  */
 
